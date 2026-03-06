@@ -19,21 +19,21 @@
       "classification_report": "              precision    recall  f1-score   support\n\n           0       0.87      0.97      0.92      1593\n           1       0.78      0.44      0.56       407\n\n    accuracy                           0.86      2000\n   macro avg       0.82      0.70      0.74      2000\nweighted avg       0.85      0.86      0.84      2000\n"
     },
     "random_forest": {
-      "accuracy": 0.8625,
-      "precision": 0.7869565217391304,
-      "recall": 0.44471744471744473,
-      "f1": 0.5682888540031397,
+      "accuracy": 0.8615,
+      "precision": 0.7850877192982456,
+      "recall": 0.4398034398034398,
+      "f1": 0.5637795275590551,
       "confusion_matrix": [
         [
           1544,
           49
         ],
         [
-          226,
-          181
+          228,
+          179
         ]
       ],
-      "classification_report": "              precision    recall  f1-score   support\n\n           0       0.87      0.97      0.92      1593\n           1       0.79      0.44      0.57       407\n\n    accuracy                           0.86      2000\n   macro avg       0.83      0.71      0.74      2000\nweighted avg       0.85      0.86      0.85      2000\n"
+      "classification_report": "              precision    recall  f1-score   support\n\n           0       0.87      0.97      0.92      1593\n           1       0.79      0.44      0.56       407\n\n    accuracy                           0.86      2000\n   macro avg       0.83      0.70      0.74      2000\nweighted avg       0.85      0.86      0.85      2000\n"
     },
     "lightgbm": {
       "accuracy": 0.8535,

@@ -28,6 +28,8 @@ CREATE TABLE IF NOT EXISTS churn_records (
 """
 
 
+COUNT_ROWS_SQL = "SELECT COUNT(*) FROM churn_records"
+
 def get_connection():
     return psycopg.connect(
         host=DB_HOST,
@@ -85,3 +87,9 @@ def insert_record(payload: dict) -> int:
             ),
         )
         return cur.fetchone()[0]
+
+
+def get_record_count() -> int:
+    with get_cursor() as cur:
+        cur.execute(COUNT_ROWS_SQL)
+        return cur.fetchone()[0] or 0

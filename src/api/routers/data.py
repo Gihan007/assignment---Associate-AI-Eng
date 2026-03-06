@@ -3,7 +3,7 @@ from typing import Optional
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel, Field
 
-from ..db import init_db, insert_record
+from ...database.db import init_db, insert_record
 
 router = APIRouter()
 

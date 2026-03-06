@@ -9,3 +9,5 @@ psycopg[binary]
 matplotlib
 catboost
 lightgbm
+imbalanced-learn
+requests
