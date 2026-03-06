@@ -1,0 +1,39 @@
+version: "3.9"
+
+services:
+  api:
+    build: .
+    ports:
+      - "8008:8008"
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data:ro
+      - ./models:/app/models
+    command: uvicorn src.serve:app --host 0.0.0.0 --port 8008
+    depends_on:
+      - postgres
+
+  trainer:
+    build: .
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data:ro
+      - ./models:/app/models
+    command: python -m src.train
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:15
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: churn
+      POSTGRES_USER: app
+      POSTGRES_PASSWORD: changeme
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
